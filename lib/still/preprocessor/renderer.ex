@@ -82,11 +82,11 @@ defmodule Still.Preprocessor.Renderer do
 
             use Still.Compiler.TemplateHelpers, unquote(Macro.escape(module_metadata))
 
-            Enum.map(unquote(Macro.escape(metadata)), fn {k, v} ->
+            Enum.each(unquote(Macro.escape(metadata)), fn {k, v} ->
               Module.put_attribute(__MODULE__, k, v)
             end)
 
-            def render() do
+            def render do
               var!(unquote(Macro.var(:assigns, __MODULE__))) = unquote(Macro.escape(metadata))
               _ = var!(unquote(Macro.var(:assigns, __MODULE__)))
               unquote(compiled)

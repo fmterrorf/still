@@ -10,15 +10,15 @@ defmodule Still.Compiler.TemplateHelpers do
 
       alias Still.Compiler.{
         Incremental,
+        PreprocessorError,
+        TemplateHelpers.ContentTag,
         TemplateHelpers.Link,
-        TemplateHelpers.UrlFor,
         TemplateHelpers.LinkToCSS,
         TemplateHelpers.LinkToJS,
-        TemplateHelpers.ContentTag,
         TemplateHelpers.ResponsiveImage,
         TemplateHelpers.SafeHTML,
         TemplateHelpers.Truncate,
-        PreprocessorError
+        TemplateHelpers.UrlFor
       }
 
       alias __MODULE__
